@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.Double?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import view.CellMap?>
+<?import javafx.scene.layout.Pane?>
+<?import view.MiniatureCellMap?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml/1" spacing="15" prefWidth="$defaultWidth" stylesheets="@style.css">
+	<fx:define>
+		<Double fx:id="smallWidth" fx:value="70" />
+		<Double fx:id="mediumWidth" fx:value="120" />
+		<Double fx:id="defaultWidth" fx:value="250" />
+	</fx:define>
+	
+	<VBox spacing="3">
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Label prefWidth="$smallWidth" text="Width:"></Label>
+			<TextField fx:id="mapWidth"></TextField>
+		</HBox>
+		
+		<HBox alignment="CENTER_LEFT" spacing="10">
+			<Label prefWidth="$smallWidth" text="Height:"></Label>
+			<TextField fx:id="mapHeight"></TextField>
+		</HBox>
+		
+		<Label id="errorLabel" fx:id="errorLabel" text="Only numeric values bigger than 0"></Label>
+	</VBox>
+	
+	<VBox spacing="10">
+		<VBox spacing="5">
+			<Button prefWidth="$defaultWidth" fx:id="start">Start</Button>
+			<Button prefWidth="$defaultWidth" fx:id="stop">Stop</Button>
+			<Button prefWidth="$defaultWidth" fx:id="reset">Reset</Button>
+		</VBox>
+		
+		<VBox fx:id="loadingStatus">
+			<Label fx:id="loadingLabel"></Label>
+			<ProgressBar prefWidth="$defaultWidth" fx:id="progress"></ProgressBar>
+		</VBox>
+	</VBox>
+	
+	<VBox>
+		<Pane fx:id="cellMapContainer" id="cellMapContainer">
+			<MiniatureCellMap fx:id="miniatureCellMap" width="$defaultWidth" height="$defaultWidth"></MiniatureCellMap>
+		</Pane>
+		<HBox spacing="5">
+			<Label prefWidth="$mediumWidth" text="Current position:"></Label>
+			<Label fx:id="currentPosition" text="0, 0"></Label>
+		</HBox>
+		<HBox spacing="5">
+			<Label prefWidth="$mediumWidth" text="Viewable cells:"></Label>
+			<Label fx:id="viewableCells" text="W: 144, H: 88"></Label>
+		</HBox>
+	</VBox>
+	
+	<VBox>
+		<HBox spacing="5">
+			<Label text="Minimum refresh time:"></Label>
+			<Label fx:id="sliderValue"></Label>
+		</HBox>
+		<Slider fx:id="slider" prefWidth="$defaultWidth" min="100" max="4000" snapToTicks="true" minorTickCount="0" majorTickUnit="100" showTickMarks="true"  blockIncrement="100"></Slider>
+	</VBox>
+	
+	<VBox spacing="0" alignment="TOP_LEFT">
+		<Label text="Generation"></Label>
+		<Label fx:id="generation" id="titleLabel" text="0"></Label>
+		
+		<Label text="Elapsed time"></Label>
+		<Label fx:id="elapsedTime" id="titleLabel" text="0"></Label>
+		
+		<Label text="Average elapsed time"></Label>
+		<Label fx:id="avgElapsedTime" id="titleLabel" text="0"></Label>
+		
+		<Label text="Cells alive"></Label>
+		<Label fx:id="cellsAlive" id="titleLabel" text="0"></Label>
+	</VBox>
+	
+	
+	
+</fx:root>
+
