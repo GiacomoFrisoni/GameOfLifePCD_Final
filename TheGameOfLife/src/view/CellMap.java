@@ -2,6 +2,7 @@ package view;
 
 import java.util.concurrent.CountDownLatch;
 
+import controller.Chrono;
 import javafx.application.Platform;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -18,7 +19,6 @@ public class CellMap extends Canvas {
 	private boolean[][] cells;
 	
 	private int xPosition, yPosition;
-	
 	
 	public CellMap() { }
 	
@@ -96,11 +96,10 @@ public class CellMap extends Canvas {
 				//X value of superior limit of cells I'm able to draw
 				final int xMaxOffset = (containerXposition + 1) * drawableXCells;
 				final int yMaxOffset = (containerYposition + 1) * drawableYCells;
-				
+			
 				//Take the min of MAX (144) and real matrix preview (may be minor, 10x10 have 10x and 10y limit)
 				final int minX = Math.min(xMaxOffset, cells[0].length);
 				final int minY = Math.min(yMaxOffset, cells.length);
-				
 				
 				//Create the graphics and clear the previous
 				final GraphicsContext gc = getGraphicsContext2D();
@@ -118,6 +117,7 @@ public class CellMap extends Canvas {
 					}
 				}	
 				
+				//Ok controller, i finished to draw
 				if (latch != null)
 					latch.countDown();
 			}

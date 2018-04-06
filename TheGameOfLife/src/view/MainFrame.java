@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -80,6 +81,10 @@ public class MainFrame extends BorderPane implements GameOfLifeFrame {
 		this.stage.setTitle(WINDOW_TITLE);
 		this.stage.setScene(scene);
 		this.stage.setResizable(false);
+		this.stage.getIcons().addAll(
+				new Image(("file:res/icon16x16.png")),
+				new Image(("file:res/icon32x32.png")),
+				new Image(("file:res/icon64x64.png")));
 		this.stage.show();	
 
 		

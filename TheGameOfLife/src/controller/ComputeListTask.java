@@ -4,8 +4,6 @@ import java.awt.Point;
 import java.util.List;
 import java.util.concurrent.Callable;
 
-import org.magicwerk.brownies.collections.BigList;
-
 import model.ConwayCellMap;
 
 /*This

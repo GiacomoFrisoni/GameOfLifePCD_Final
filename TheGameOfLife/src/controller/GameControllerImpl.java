@@ -95,7 +95,7 @@ public class GameControllerImpl implements GameController {
 		this.view.setProgress(ProgressType.INDETERMINATE, "Computing next generation...");
 		this.model.nextGeneration();
 		this.isMapInitialized = true;
-		//this.view.reset();
+		this.view.reset();
 		this.view.drawCells(this.model.getCellMapStates(), null);
 	}
 	
@@ -148,37 +148,6 @@ public class GameControllerImpl implements GameController {
 				
 				view.setStarted();
 			}
-			
-			
-			/*
-			if (initModel()) {
-				if (stopFlag.isOn()) {
-					if (!isMapInitialized)
-						initCellMap();
-
-					stopFlag.setOff();
-					
-					// Starts producer and consumer threads
-					producer = Optional.of(new GameOfLifeProducer(queue, executor, model, stopFlag));
-					consumer = Optional.of(new GameOfLifeConsumer(queue, view, stopFlag, minTickTime));
-					producer.get().start();
-					consumer.get().start();
-					
-					updatingPool = Optional.of(Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new Thread(new Runnable() {
-						@Override
-						public void run() {
-							if (queue.isEmpty()) {
-								view.updateProgress(model.getPercentageCompletion());
-							}
-						}
-					}), 0, PROGRESS_PERIOD, TimeUnit.MILLISECONDS));
-					
-					
-					view.setStarted();
-				}
-			} else {
-				view.showAlert("Failed to init", "Failed to start. Maybye some input field are empty");
-			}*/
 			
 		}).start();	
 	}

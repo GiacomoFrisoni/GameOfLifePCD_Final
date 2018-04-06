@@ -9,8 +9,6 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import org.magicwerk.brownies.collections.BigList;
-
 import model.ConwayCellMap;
 import model.GenerationResult;
 import view.GameOfLifeFrame;

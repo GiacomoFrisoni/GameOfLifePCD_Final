@@ -4,8 +4,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.util.List;
 
-import org.magicwerk.brownies.collections.BigList;
-
 /**
  * This interface handles a cell map for the Game Of Life.
  *
