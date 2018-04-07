@@ -124,6 +124,7 @@ public class GameControllerImpl implements GameController {
 				}
 			}
 			if (isMapInitialized) {
+				view.setStarted();
 				stopFlag.setOff();
 				
 				// Starts producer and consumer threads
@@ -140,9 +141,7 @@ public class GameControllerImpl implements GameController {
 							view.updateProgress(model.getPercentageCompletion());
 						}
 					}
-				}), 0, PROGRESS_PERIOD, TimeUnit.MILLISECONDS));
-				
-				view.setStarted();
+				}), 0, PROGRESS_PERIOD, TimeUnit.MILLISECONDS));				
 			}
 		}).start();	
 	}
