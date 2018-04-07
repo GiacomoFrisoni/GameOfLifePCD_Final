@@ -2,7 +2,6 @@ package view;
 
 import java.util.concurrent.CountDownLatch;
 
-import controller.Chrono;
 import javafx.application.Platform;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;

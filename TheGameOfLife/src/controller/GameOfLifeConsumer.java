@@ -3,13 +3,12 @@ package controller;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 
-import javafx.application.Platform;
 import model.GenerationResult;
 import view.GameOfLifeFrame;
 import view.ProgressType;
 
 /**
- * This class models a Game Of Life Consumer.
+ * This class models a Game of Life Consumer.
  * It picks up the results of the computations from the buffer and shows them
  * on video with the minimum frequency desired.
  *
@@ -29,7 +28,7 @@ public class GameOfLifeConsumer extends Thread {
 	
 	
 	/**
-	 * Constructs a new Game Of Life consumer.
+	 * Constructs a new Game of Life consumer.
 	 * 
 	 * @param queue
 	 * 		the producer / consumer queue

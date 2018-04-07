@@ -29,17 +29,15 @@ public interface ConwayCellMap {
 	 * @return the cells to evaluate for current generation completion.
 	 */
 	List<Point> getCellsToEvaluate();
-	
+
 	/**
-	 * Applies game of life rules to the specified cell.
+	 * Applies game of life rules to the specified list of cells.
 	 * 
-	 * @param x
-	 * 		x coordinate of the cell to compute
-	 * @param y
-	 * 		y coordinate of the cell to compute
-	 * @return the next status of the cell after the computation.
+	 * @param cells
+	 * 		the cells to compute
+	 * @return the next status of the cells after the computation.
 	 */
-	boolean computeCell(int x, int y);
+	List<Boolean> computeCells(final List<Point> cells);
 	
 	/**
 	 * @return the number of computed cells on the total expected for the
@@ -61,7 +59,4 @@ public interface ConwayCellMap {
 	 * Randomly initializes the status of a cell in the map.
 	 */
 	void randomInitCell();
-	
-	
-	List<Boolean> computeCells(final List<Point> cells);
 }

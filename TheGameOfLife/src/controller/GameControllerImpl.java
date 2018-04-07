@@ -45,7 +45,7 @@ public class GameControllerImpl implements GameController {
 	 * Constructs a new game controller.
 	 * 
 	 * @param view
-	 * 		the Game Of Life view
+	 * 		the Game of Life view
 	 */
 	public GameControllerImpl(final GameOfLifeFrame view) {
 		Objects.requireNonNull(view);
@@ -99,7 +99,6 @@ public class GameControllerImpl implements GameController {
 		this.view.drawCells(this.model.getCellMapStates(), null);
 	}
 	
-	
 	/*
 	 * Gets the map dimension specified as input from the view and
 	 * initializes the model. Return true if the operation is successful,
@@ -114,11 +113,9 @@ public class GameControllerImpl implements GameController {
 		return false;
 	}
 	
-	
 	@Override
 	public void start() {
 		new Thread(() -> {
-			
 			if (!isMapInitialized) {
 				if (initModel()) {
 					initCellMap();
@@ -126,17 +123,17 @@ public class GameControllerImpl implements GameController {
 					view.showAlert("Failed to init", "Failed to start. Maybye some input field are empty");
 				}
 			}
-			
 			if (isMapInitialized) {
 				stopFlag.setOff();
 				
 				// Starts producer and consumer threads
-				producer = Optional.of(new GameOfLifeProducer(queue, executor, model, stopFlag, view));
+				producer = Optional.of(new GameOfLifeProducer(queue, executor, model, view, stopFlag));
 				consumer = Optional.of(new GameOfLifeConsumer(queue, view, stopFlag, minTickTime));
 				producer.get().start();
 				consumer.get().start();
 				
-				updatingPool = Optional.of(Executors.newSingleThreadScheduledExecutor().scheduleAtFixedRate(new Thread(new Runnable() {
+				updatingPool = Optional.of(Executors.newSingleThreadScheduledExecutor()
+						.scheduleAtFixedRate(new Thread(new Runnable() {
 					@Override
 					public void run() {
 						if (queue.isEmpty()) {
@@ -145,10 +142,8 @@ public class GameControllerImpl implements GameController {
 					}
 				}), 0, PROGRESS_PERIOD, TimeUnit.MILLISECONDS));
 				
-				
 				view.setStarted();
 			}
-			
 		}).start();	
 	}
 	
