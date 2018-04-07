@@ -113,6 +113,7 @@ public class MainFrame extends BorderPane implements GameOfLifeFrame {
 		this.cellMapViewer.calculateMapLimits();
 		this.menuPanel.setStarted();
 		this.menuPanel.setLimits(this.cellMapViewer.getXLimit(), this.cellMapViewer.getYLimit());
+		this.menuPanel.setCurrentPosition(this.cellMapViewer.getXposition(), this.cellMapViewer.getYposition());
 	}
 
 	@Override
