@@ -156,10 +156,20 @@ public class CellMapViewer extends BorderPane {
 		return yPosition;
 	}
 	
+	/**
+	 * Get the X limit of the map
+	 * @return
+	 * 		X limit of the map
+	 */
 	public int getXLimit() {
 		return mapXLimit;
 	}
 	
+	/**
+	 * Get the Y limit of the map
+	 * @return
+	 * 		Y limit of the map
+	 */
 	public int getYLimit() {
 		return mapYLimit;
 	}
