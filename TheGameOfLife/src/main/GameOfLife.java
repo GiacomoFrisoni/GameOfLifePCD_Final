@@ -19,10 +19,10 @@ public final class GameOfLife extends Application {
 		final GameController controller = new GameControllerImpl(view);
 		view.setObserver(controller);
 		view.showView();
-
 	}
 	
 	public static void main(final String[] args) {
 		launch(args);	
 	}
+	
 }

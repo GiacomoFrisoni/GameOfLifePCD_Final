@@ -91,10 +91,10 @@ public class GameOfLifeConsumer extends Thread {
 				// Retrieves a generation result, waiting if necessary until an element becomes available.
 				if (!stopFlag.isOn())
 					this.view.setProgress(ProgressType.INDETERMINATE, "Computing next generation...");
-				res = queue.take();		
+				res = queue.take();
 				
 				// Updates view
-				this.view.setGenerationInfo(res.getGenerationNumber(), res.getComputationTime(), res.getCellsAlive());
+				this.view.setGenerationInfo(res.getGenerationNumber(), res.getComputationTime(), res.getAliveCells());
 				this.view.updateProgress(0);
 				this.latch = new CountDownLatch(1);
 				this.view.drawCells(res.getCellsStates(), this.latch);
@@ -104,4 +104,5 @@ public class GameOfLifeConsumer extends Thread {
 			}
 		}
 	}
+	
 }

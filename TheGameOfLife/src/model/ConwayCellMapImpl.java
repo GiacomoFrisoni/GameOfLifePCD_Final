@@ -264,4 +264,5 @@ public class ConwayCellMapImpl implements ConwayCellMap {
 		}
 		return res.toString();
 	}
+	
 }

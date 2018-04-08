@@ -107,4 +107,5 @@ public class GameOfLifeProducer extends Thread {
 			view.showAlert("Thread error", "Someone killed the producer when was waiting for something. Please reset.\n\n" + ie.getMessage());
 		}
 	}
+	
 }

@@ -66,4 +66,5 @@ public class MessageViewer {
 	public static void showExceptionAndExit(final String header, final String message) {
 		showExceptionAndExit(header, message, "");
 	}
+	
 }

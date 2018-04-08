@@ -62,4 +62,5 @@ public class MiniatureCellMap extends Canvas {
 			}
 		});
 	}
+	
 }

@@ -6,17 +6,12 @@ import java.util.concurrent.Callable;
 
 import model.ConwayCellMap;
 
-/*This
-
-class represents
-a task
-aimed at
-computing a cell for
-the current*
-generation of
-the Game
-Of Life.**/
-
+/**
+ * This class represents a task aimed at computing
+ * a collection of cells for the current generation of
+ * the Game of Life.
+ *
+ */
 public class ComputeListTask implements Callable<List<Boolean>> {
 
 	private final ConwayCellMap model;
@@ -31,5 +26,6 @@ public class ComputeListTask implements Callable<List<Boolean>> {
 	public List<Boolean> call() {
 		return this.model.computeCells(this.cells);
 	}
+	
 }
 

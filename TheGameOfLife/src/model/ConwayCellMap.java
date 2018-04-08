@@ -59,4 +59,5 @@ public interface ConwayCellMap {
 	 * Randomly initializes the status of a cell in the map.
 	 */
 	void randomInitCell();
+	
 }

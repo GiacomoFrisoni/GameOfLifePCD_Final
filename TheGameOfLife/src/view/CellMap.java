@@ -72,8 +72,6 @@ public class CellMap extends Canvas {
 	}
 	
 	
-	
-	
 	/**
 	 * Draw the cells considering current position
 	 */
